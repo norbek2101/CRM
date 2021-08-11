@@ -1,0 +1,27 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+
+    <h1>Register</h1>
+
+    <form action="" method="POST" style="width: 50%; margin: auto;">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label }}
+                {{ field }}
+            </div>
+            <br>
+        {% endfor %}
+
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <script>
+        var inp=document.getElementsByTagName('input');
+        for(let i of inp) {
+            i.className = 'form-control';
+        }
+        {#console.log(inp);#}
+    </script>
+{% endblock %}
